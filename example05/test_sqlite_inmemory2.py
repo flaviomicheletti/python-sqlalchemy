@@ -58,7 +58,3 @@ class TestUserService(unittest.TestCase):
 
     def tearDown(self):
         Base.metadata.drop_all(self.engine)
-
-
-if __name__ == "__main__":
-    unittest.main()
