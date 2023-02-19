@@ -1,14 +1,13 @@
+# Python SQLAlchemy Unittest
+
+![image](https://user-images.githubusercontent.com/1257048/219973971-906c02d6-3ca9-489d-9aed-ce38d1b466b4.png)
 
 
-# Instalation
+## Instalation
 
 __venv:__
 
     python3 -m venv .venv && . .venv/bin/activate
-
-## Install
-
-In both environments you will need to install it only once.
 
     pip install mock
     pip install coverage
@@ -19,14 +18,9 @@ In both environments you will need to install it only once.
     # pip install psycopg2
 
 
-
-    pip install requests
-
 ## Running
 
     python -m unittest discover -v
-    python -m unittest discover -p 'test_*.py'
-
 
 ## Coverage
 
