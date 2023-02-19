@@ -1,0 +1,8 @@
+*.pyc
+__pycache__
+htmlcov
+.coverage
+.venv
+bin
+lib
+*.db
