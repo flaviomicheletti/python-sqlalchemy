@@ -3,14 +3,12 @@ logging.disable(logging.WARNING)
 
 import unittest
 from unittest.mock import Mock
-from example02.database import Base, Session, User
+from example02.database import Base, User
 
 # Define unit tests
 class TestDatabase(unittest.TestCase):
     def setUp(self):
-        self.Session = Mock()
         self.session = Mock()
-        self.Session.return_value = self.session
 
     def test_add_user(self):
         user = User(id=1, name="John", age=30)

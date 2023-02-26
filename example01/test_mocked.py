@@ -6,10 +6,7 @@ from example01 import User
 # Define unit tests
 class TestDatabase(unittest.TestCase):
     def setUp(self):
-        self.engine = Mock()
-        self.Session = Mock()
         self.session = Mock()
-        self.Session.return_value = self.session
 
     def test_add_user(self):
         user = User(id=1, name="John", age=30)
