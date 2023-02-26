@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 import unittest
-from example03.database import engine, Base, Session, User
+from example03.database import Base, User
 
 # Define unit tests
 class TestDatabase(unittest.TestCase):

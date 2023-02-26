@@ -1,9 +1,8 @@
 from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 
-engine = create_engine('postgresql://username:password@localhost:5432/example', echo=True)
-Session = sessionmaker(bind=engine)
+Engine = create_engine('postgresql://username:password@localhost:5432/example', echo=True)
+Session = sessionmaker(bind=Engine)
 Base = declarative_base()
 
 class User(Base):
