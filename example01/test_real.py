@@ -1,22 +1,15 @@
+import unittest
+from example01 import User, Base
+
 import logging
 logging.disable(logging.WARNING)
 
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.orm import declarative_base, sessionmaker
-import unittest
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 # Create database connection
 engine = create_engine("sqlite:///example1.db", echo=True)
 Session = sessionmaker(bind=engine)
-Base = declarative_base()
-
-# Define database table
-class User(Base):
-    __tablename__ = "users"
-
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    age = Column(Integer)
 
 
 # Define unit tests

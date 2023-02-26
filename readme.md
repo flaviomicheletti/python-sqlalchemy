@@ -22,8 +22,12 @@ __venv:__
 
     python -m unittest discover -v
 
+    python -m unittest discover example01/
+
 ## Coverage
 
     coverage run -m unittest discover
     coverage report -m
     coverage html
+
+    coverage run -m unittest discover && coverage report -m && coverage html
