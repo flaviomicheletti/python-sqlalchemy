@@ -2,18 +2,18 @@ import logging
 logging.disable(logging.WARNING)
 
 import unittest
-from example02.database import engine, Base, Session, User
+from example02.database import Engine, Base, Session, User
 
 
 class TestDatabase(unittest.TestCase):
     def setUp(self):
-        Base.metadata.create_all(engine)
+        Base.metadata.create_all(Engine)
         self.session = Session()
 
     def tearDown(self):
         self.session.rollback()
         self.session.close()
-        Base.metadata.drop_all(engine)
+        Base.metadata.drop_all(Engine)
 
     def test_add_user(self):
         user = User(name="John", age=30)

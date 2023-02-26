@@ -1,7 +1,10 @@
-from sqlalchemy.orm import declarative_base
 from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.orm import declarative_base, sessionmaker
 
-# Create database connection
+
+# Set database connection
+Engine = create_engine("sqlite:///example1.db", echo=True)
+Session = sessionmaker(bind=Engine)
 Base = declarative_base()
 
 
