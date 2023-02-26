@@ -11,25 +11,25 @@ c.execute(
 )
 
 # function to create a new record in the database
-def create_record(conn, name, age):
+def create(conn, name, age):
     conn.execute("INSERT INTO example_table (name, age) VALUES (?, ?)", (name, age))
     conn.commit()
 
 
 # function to read all records from the database
-def read_records(conn):
+def read(conn):
     conn.execute("SELECT * FROM example_table")
     return c.fetchall()
 
 
 # function to update a record in the database
-def update_record(conn, id, name, age):
+def update(conn, id, name, age):
     conn.execute("UPDATE example_table SET name=?, age=? WHERE id=?", (name, age, id))
     conn.commit()
 
 
 # function to delete a record from the database
-def delete_record(conn, id):
+def delete(conn, id):
     conn.execute("DELETE FROM example_table WHERE id=?", (id,))
     conn.commit()
 
