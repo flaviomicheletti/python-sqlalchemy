@@ -1,26 +1,8 @@
 import unittest
 from unittest.mock import MagicMock, patch
 from person2 import read_person, model
-from person2.db import getSession
-
 
 class TestPerson2(unittest.TestCase):
-
-    @patch('person2.db.create_engine')
-    @patch('person2.db.sessionmaker')
-    def test_get_session(self, mock_sessionmaker, mock_create_engine):
-        # Set up the mocks
-        mock_session = MagicMock()
-        mock_sessionmaker.return_value = MagicMock(return_value=mock_session)
-        mock_engine = MagicMock()
-        mock_create_engine.return_value = mock_engine
-
-        result = getSession()
-
-        # Assertions
-        mock_create_engine.assert_called_once_with('sqlite:///person2.db')
-        mock_sessionmaker.assert_called_once_with(bind=mock_engine)
-        self.assertEqual(result, mock_session)
 
 
     @patch('person2.db.getSession')

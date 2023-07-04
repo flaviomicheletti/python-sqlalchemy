@@ -1,9 +1,10 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import declarative_base
-
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import declarative_base, sessionmaker
+from config import postegres_string
 
+Engine = create_engine(postegres_string(), echo=True)
+Session = sessionmaker(bind=Engine)
 Base = declarative_base()
 
 
@@ -15,8 +16,6 @@ class Person(Base):
     age = Column(Integer)
     email = Column(String)
 
-engine = create_engine('sqlite:///person.db')
-Session = sessionmaker(bind=engine)
 
 def read_person(name):
     session = Session()

@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from config import postegres_string
 
 
 def getSession():
-    """Get a session to the database"""
-    engine = create_engine('sqlite:///person2.db')
-    session = sessionmaker(bind=engine)
+    Engine = create_engine(postegres_string())
+    Session = sessionmaker(bind=Engine)
 
-    return session()
+    return Session()

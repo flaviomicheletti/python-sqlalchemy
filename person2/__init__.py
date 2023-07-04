@@ -1,7 +1,7 @@
-
 from person2 import db, model
 # import db
 # import model
+
 
 def read_person(name):
     session = db.getSession()

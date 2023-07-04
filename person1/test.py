@@ -1,10 +1,10 @@
 import unittest
 from unittest.mock import patch
-from person import Person, read_person
+from person1 import Person, read_person
 
 
 class TestReadPerson(unittest.TestCase):
-    @patch("person.Session")
+    @patch("person1.Session")
     def test_read_person(self, mock_session):
 
         mock_person = Person(name="John", age=30, email="john@example.com")
